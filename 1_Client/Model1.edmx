@@ -1,0 +1,461 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="PORTMAN2014Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TableGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <EntityType Name="TableParameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="Value" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TablePortAlcatel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteName" Type="nvarchar" MaxLength="200" />
+          <Property Name="SiteId" Type="nvarchar" MaxLength="200" />
+          <Property Name="SnmpPortId" Type="nvarchar" MaxLength="200" />
+          <Property Name="SfpOpticalCompliance" Type="nvarchar" MaxLength="200" />
+          <Property Name="SfpStatus" Type="nvarchar" MaxLength="200" />
+          <Property Name="PortCategory" Type="nvarchar" MaxLength="200" />
+          <Property Name="SpecificType" Type="nvarchar" MaxLength="200" />
+          <Property Name="Description" Type="nvarchar" MaxLength="200" />
+          <Property Name="ReservDescription" Type="nvarchar" MaxLength="200" />
+          <Property Name="State" Type="nvarchar" MaxLength="200" />
+          <Property Name="DisplayedName" Type="nvarchar" MaxLength="200" />
+          <Property Name="OperationalState" Type="nvarchar" MaxLength="200" />
+          <Property Name="AdministrativeState" Type="nvarchar" MaxLength="200" />
+          <Property Name="UpdateDatetime" Type="datetime2" Precision="7" />
+          <Property Name="UpdateUsername" Type="nvarchar" MaxLength="200" />
+          <Property Name="Status" Type="nvarchar" MaxLength="200" />
+          <Property Name="Logs" Type="nvarchar" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="TablePortAvea">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PortType" Type="nvarchar" MaxLength="50" />
+          <Property Name="SiteName" Type="nvarchar" MaxLength="100" />
+          <Property Name="SiteIP" Type="nvarchar" MaxLength="100" />
+          <Property Name="PortName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+          <Property Name="PRTType" Type="nvarchar" MaxLength="100" />
+          <Property Name="SFPType" Type="nvarchar" MaxLength="100" />
+          <Property Name="OprState" Type="nvarchar" MaxLength="50" />
+          <Property Name="AdmState" Type="nvarchar" MaxLength="50" />
+          <Property Name="UpdateDatetime" Type="datetime2" Precision="7" />
+          <Property Name="UpdateUsername" Type="nvarchar" MaxLength="200" />
+          <Property Name="Status" Type="nvarchar" MaxLength="200" />
+          <Property Name="Logs" Type="nvarchar" MaxLength="4000" />
+          <Property Name="ReservDescription" Type="nvarchar" MaxLength="300" />
+          <Property Name="RequestUser" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TableRouterAlcatel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteName" Type="nvarchar" MaxLength="200" />
+          <Property Name="SiteIP" Type="nvarchar" MaxLength="200" />
+          <Property Name="Connection" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TableRouterCisco">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteName" Type="nvarchar" MaxLength="200" />
+          <Property Name="SiteIP" Type="nvarchar" MaxLength="200" />
+          <Property Name="Connection" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TableRouterHuawei">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SiteName" Type="nvarchar" MaxLength="200" />
+          <Property Name="SiteIP" Type="nvarchar" MaxLength="200" />
+          <Property Name="Connection" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TableSession">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SessionStart" Type="datetime2" Precision="7" />
+          <Property Name="SessionFinish" Type="datetime2" Precision="7" />
+          <Property Name="ElapsedTime" Type="bigint" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" />
+          <Property Name="PCName" Type="nvarchar" MaxLength="200" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="200" />
+          <Property Name="AppVersion" Type="nvarchar" MaxLength="200" />
+          <Property Name="NetVersion" Type="nvarchar" MaxLength="200" />
+          <Property Name="Status" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="TableUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Password" Type="nvarchar" MaxLength="200" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Email" Type="nvarchar" MaxLength="200" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="200" />
+          <Property Name="GroupID" Type="int" />
+          <Property Name="Admin" Type="bit" />
+          <Property Name="Active" Type="bit" />
+        </EntityType>
+        <Association Name="FK_TableUser_TableGroup">
+          <End Role="TableGroup" Type="Self.TableGroup" Multiplicity="0..1" />
+          <End Role="TableUser" Type="Self.TableUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TableGroup">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TableUser">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PORTMAN2014ModelStoreContainer">
+          <EntitySet Name="TableGroup" EntityType="Self.TableGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableParameter" EntityType="Self.TableParameter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TablePortAlcatel" EntityType="Self.TablePortAlcatel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TablePortAvea" EntityType="Self.TablePortAvea" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableRouterAlcatel" EntityType="Self.TableRouterAlcatel" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableRouterCisco" EntityType="Self.TableRouterCisco" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableRouterHuawei" EntityType="Self.TableRouterHuawei" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableSession" EntityType="Self.TableSession" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TableUser" EntityType="Self.TableUser" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TableUser_TableGroup" Association="Self.FK_TableUser_TableGroup">
+            <End Role="TableGroup" EntitySet="TableGroup" />
+            <End Role="TableUser" EntitySet="TableUser" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="PORTMAN2014Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TableGroup">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" />
+          <NavigationProperty Name="TableUser" Relationship="Self.FK_TableUser_TableGroup" FromRole="TableGroup" ToRole="TableUser" />
+        </EntityType>
+        <EntityType Name="TableParameter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Value" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TablePortAlcatel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SiteId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SnmpPortId" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SfpOpticalCompliance" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SfpStatus" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PortCategory" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SpecificType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="ReservDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="State" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="DisplayedName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="OperationalState" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AdministrativeState" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDatetime" Type="DateTime" Precision="7" />
+          <Property Name="UpdateUsername" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Logs" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TablePortAvea">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PortType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SiteName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SiteIP" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PortName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="PRTType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SFPType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="OprState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="AdmState" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDatetime" Type="DateTime" Precision="7" />
+          <Property Name="UpdateUsername" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Logs" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="ReservDescription" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="RequestUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableRouterAlcatel">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SiteIP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Connection" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableRouterCisco">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SiteIP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Connection" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableRouterHuawei">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SiteName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="SiteIP" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Connection" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableSession">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SessionStart" Type="DateTime" Precision="7" />
+          <Property Name="SessionFinish" Type="DateTime" Precision="7" />
+          <Property Name="ElapsedTime" Type="Int64" />
+          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="PCName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IPAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="AppVersion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NetVersion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TableUser">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="FullName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="GroupID" Type="Int32" />
+          <Property Name="Admin" Type="Boolean" />
+          <Property Name="Active" Type="Boolean" />
+          <NavigationProperty Name="TableGroup" Relationship="Self.FK_TableUser_TableGroup" FromRole="TableUser" ToRole="TableGroup" />
+        </EntityType>
+        <Association Name="FK_TableUser_TableGroup">
+          <End Role="TableGroup" Type="Self.TableGroup" Multiplicity="0..1" />
+          <End Role="TableUser" Type="Self.TableUser" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TableGroup">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TableUser">
+              <PropertyRef Name="GroupID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="PORTMAN2014Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TableGroup" EntityType="Self.TableGroup" />
+          <EntitySet Name="TableParameter" EntityType="Self.TableParameter" />
+          <EntitySet Name="TablePortAlcatel" EntityType="Self.TablePortAlcatel" />
+          <EntitySet Name="TablePortAvea" EntityType="Self.TablePortAvea" />
+          <EntitySet Name="TableRouterAlcatel" EntityType="Self.TableRouterAlcatel" />
+          <EntitySet Name="TableRouterCisco" EntityType="Self.TableRouterCisco" />
+          <EntitySet Name="TableRouterHuawei" EntityType="Self.TableRouterHuawei" />
+          <EntitySet Name="TableSession" EntityType="Self.TableSession" />
+          <EntitySet Name="TableUser" EntityType="Self.TableUser" />
+          <AssociationSet Name="FK_TableUser_TableGroup" Association="Self.FK_TableUser_TableGroup">
+            <End Role="TableGroup" EntitySet="TableGroup" />
+            <End Role="TableUser" EntitySet="TableUser" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="PORTMAN2014ModelStoreContainer" CdmEntityContainer="PORTMAN2014Entities">
+          <EntitySetMapping Name="TableGroup">
+            <EntityTypeMapping TypeName="PORTMAN2014Model.TableGroup">
+              <MappingFragment StoreEntitySet="TableGroup">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableParameter">
+            <EntityTypeMapping TypeName="PORTMAN2014Model.TableParameter">
+              <MappingFragment StoreEntitySet="TableParameter">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Value" ColumnName="Value" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TablePortAlcatel">
+            <EntityTypeMapping TypeName="PORTMAN2014Model.TablePortAlcatel">
+              <MappingFragment StoreEntitySet="TablePortAlcatel">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+                <ScalarProperty Name="SiteId" ColumnName="SiteId" />
+                <ScalarProperty Name="SnmpPortId" ColumnName="SnmpPortId" />
+                <ScalarProperty Name="SfpOpticalCompliance" ColumnName="SfpOpticalCompliance" />
+                <ScalarProperty Name="SfpStatus" ColumnName="SfpStatus" />
+                <ScalarProperty Name="PortCategory" ColumnName="PortCategory" />
+                <ScalarProperty Name="SpecificType" ColumnName="SpecificType" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ReservDescription" ColumnName="ReservDescription" />
+                <ScalarProperty Name="State" ColumnName="State" />
+                <ScalarProperty Name="DisplayedName" ColumnName="DisplayedName" />
+                <ScalarProperty Name="OperationalState" ColumnName="OperationalState" />
+                <ScalarProperty Name="AdministrativeState" ColumnName="AdministrativeState" />
+                <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+                <ScalarProperty Name="UpdateUsername" ColumnName="UpdateUsername" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Logs" ColumnName="Logs" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TablePortAvea">
+            <EntityTypeMapping TypeName="PORTMAN2014Model.TablePortAvea">
+              <MappingFragment StoreEntitySet="TablePortAvea">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="PortType" ColumnName="PortType" />
+                <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+                <ScalarProperty Name="SiteIP" ColumnName="SiteIP" />
+                <ScalarProperty Name="PortName" ColumnName="PortName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="PRTType" ColumnName="PRTType" />
+                <ScalarProperty Name="SFPType" ColumnName="SFPType" />
+                <ScalarProperty Name="OprState" ColumnName="OprState" />
+                <ScalarProperty Name="AdmState" ColumnName="AdmState" />
+                <ScalarProperty Name="UpdateDatetime" ColumnName="UpdateDatetime" />
+                <ScalarProperty Name="UpdateUsername" ColumnName="UpdateUsername" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="Logs" ColumnName="Logs" />
+                <ScalarProperty Name="ReservDescription" ColumnName="ReservDescription" />
+                <ScalarProperty Name="RequestUser" ColumnName="RequestUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableRouterAlcatel">
+            <EntityTypeMapping TypeName="PORTMAN2014Model.TableRouterAlcatel">
+              <MappingFragment StoreEntitySet="TableRouterAlcatel">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+                <ScalarProperty Name="SiteIP" ColumnName="SiteIP" />
+                <ScalarProperty Name="Connection" ColumnName="Connection" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableRouterCisco">
+            <EntityTypeMapping TypeName="PORTMAN2014Model.TableRouterCisco">
+              <MappingFragment StoreEntitySet="TableRouterCisco">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+                <ScalarProperty Name="SiteIP" ColumnName="SiteIP" />
+                <ScalarProperty Name="Connection" ColumnName="Connection" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableRouterHuawei">
+            <EntityTypeMapping TypeName="PORTMAN2014Model.TableRouterHuawei">
+              <MappingFragment StoreEntitySet="TableRouterHuawei">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SiteName" ColumnName="SiteName" />
+                <ScalarProperty Name="SiteIP" ColumnName="SiteIP" />
+                <ScalarProperty Name="Connection" ColumnName="Connection" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableSession">
+            <EntityTypeMapping TypeName="PORTMAN2014Model.TableSession">
+              <MappingFragment StoreEntitySet="TableSession">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="SessionStart" ColumnName="SessionStart" />
+                <ScalarProperty Name="SessionFinish" ColumnName="SessionFinish" />
+                <ScalarProperty Name="ElapsedTime" ColumnName="ElapsedTime" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="PCName" ColumnName="PCName" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="AppVersion" ColumnName="AppVersion" />
+                <ScalarProperty Name="NetVersion" ColumnName="NetVersion" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TableUser">
+            <EntityTypeMapping TypeName="PORTMAN2014Model.TableUser">
+              <MappingFragment StoreEntitySet="TableUser">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+                <ScalarProperty Name="Admin" ColumnName="Admin" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
