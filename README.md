@@ -102,5 +102,3 @@ notification reports for Alcatel Infrastructure.
 **ALCATEL – Rollback :**
 
 1) configure port {0} no description
-
----------------------------------------------------------------
