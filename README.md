@@ -10,7 +10,7 @@ Analysis and Development Document
 | **Date**       | 27.March.2015                                   |
 | **Version**    | v1.0                                            |
 
-**[1] Purpose of This Software :**
+## [1] Purpose of This Software :
 
 Managing different vendor equipment, checking their port status and
 administration of all devices have been always a challenge in a wide range
@@ -31,68 +31,50 @@ notification reports for Alcatel Infrastructure.
 
 ![cid:image009.png\@01D01ACE.24C26850](media/46a3931c90de55ee001fab5857d9a049.png)
 
-
 ## Function List for Vendors
-
 
 **HUAWEI – List :**
 
 1) system-view
-
 2) user-interface current
-
 3) screen-length 0
-
 4) screen-width 200
-
 5) display inter description
 
 **HUAWEI – Reserve :**
 
 1) system-view
-
 2) interface GigabitEthernet {0}
-
 3) description {0}
 
 **HUAWEI – Rollback :**
 
 1) system-view
-
 2) interface GigabitEthernet {0}
-
 3) undo description {0}
 
 **CISCO – List :**
 
 1) terminal width 0
-
 2) terminal length 0
-
 3) show interfaces description
 
 **CISCO – Reserve :**
 
 1) config terminal
-
 2) interface GigabitEthernet {0}
-
 3) description {0}
 
 **CISCO – Rollback :**
 
 1) config terminal
-
 2) interface GigabitEthernet {0}
-
 3) no description {0}
 
 **ALCATEL – List :**
 
 1) environment no more
-
 2) show port description  (it gives only port number and description)
-
 3) show port (it gives port number and status, sfp information)
 
 **ALCATEL – Reserve :**
